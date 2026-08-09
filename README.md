@@ -1,6 +1,6 @@
 # Business Scenario
 
-A guitar company needs a comprehensive dashboard to track its product sales. It uses several sellers (a.k.a. distributors) around the country who each are responsible for recording sales in an electronic system. Unfortunately, the sellers sometimes make mistakes when inputting sales into the database, resulting in data quality issues (missing fields, mistyped values, etc.). The company needs a dashboard that automatically cleans and visualizes the messy sales data, which updates daily. It also needs to track its use of different wood types over time and to compare price quotes of different wood vendors.
+A guitar company needs a comprehensive dashboard to track its product sales. It uses several sellers (a.k.a. distributors) around the country who each are responsible for recording sales in an electronic system. Unfortunately, the sellers sometimes make mistakes when inputting sales into the database, resulting in data quality issues (missing fields, mistyped values, etc.). The company needs a dashboard that automatically cleans and visualizes the messy sales data, which updates daily. It also needs to track its use of different wood types over time and compare price quotes of different wood vendors.
 
 The dashboard should have three tabs:
 - "Sales Overview": includes high-level insights such as monthly growth rates, top sellers, and the year-to-date product mix.
