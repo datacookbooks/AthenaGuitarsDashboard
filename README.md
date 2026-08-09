@@ -21,7 +21,7 @@ Dimension tables:
 
 # Data Cleaning
 
-Each sale has an ID that corresponds to a specific seller (id_distributor). This column should be an integer between 1 and 5, but it is often input with typos. For example, when the value should be an integer (e.g. 4), it may be input as “44 “, “4!”, “-4”, ”4a4”, “6”, and “45.” The cleaning script is built so that everything except the last two cases is recorded as a single integer. The “6” case should fail because it exceeds the valid maximum value. The “45” case should fail because it is ambiguous (we can’t tell if the person who entered the sale meant to submit 4 or 5).
+Each sale has an ID that corresponds to a specific seller (id_distributor). This column should be an integer between 1 and 5, but it is often input with typos. For example, when the value should be an integer (e.g. 4), it may be input as “44 “, “4!”, “-4”, ”4a4”, “6”, and “45.” The cleaning script is built so that everything except the last two cases is recorded as a single integer. The “6” case should fail because it exceeds the valid maximum value. The “45” case should fail because it is ambiguous (we can’t tell if the person who entered the sale meant to input 4 or 5 as the id_distributor value).
 
 Here are the steps:
 
