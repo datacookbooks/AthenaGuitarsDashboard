@@ -1,8 +1,23 @@
 # Business Scenario
 
-A guitar company needs a comprehensive dashboard to track its product sales. It uses several sellers (a.k.a. distributors) around the country who each are responsible for recording sales in an electronic system. Unfortunately, the sellers sometimes make mistakes when inputting sales into the database, resulting in data quality issues (missing fields, mistyped values, etc.). The company needs a dashboard that automatically cleans and visualizes the messy data in the database, which updates daily.
+A guitar company needs a comprehensive dashboard to track its product sales. It uses several sellers (a.k.a. distributors) around the country who each are responsible for recording sales in an electronic system. Unfortunately, the sellers sometimes make mistakes when inputting sales into the database, resulting in data quality issues (missing fields, mistyped values, etc.). The company needs a dashboard that automatically cleans and visualizes the messy sales data, which updates daily. It also needs to track its use of different wood types over time and to compare price quotes of different wood vendors.
 
-The company also wants to track its use of different types of wood over time and to compare different vendors who provide that wood. Each guitar has an ID (id_model) that is used in another table which shows the materials used in each guitar. Additionally, another table shows the price quotes that each vendor provides for every wood type; this table also updates daily, and it has 9 observations per day (3 different vendors that each provide quotes for 3 different materials: mahogany, maple, and rosewood). This information is available on the “vendors” tab.
+The dashboard should have three tabs:
+- "Sales Overview": includes high-level insights such as monthly growth rates, top sellers, and the year-to-date product mix.
+- "Sales Detailed": explores a specific category (e.g. standard, premium, etc.) and shows monthly sales and growth rates for each product within.
+- "Vendors": calculates total demand for different wood types and compares relative affordability of the company's wood vendors.  
+
+# Relevant Tables
+
+This dashboard uses four tables: two are fact tables, and two are dimensional tables.
+
+Fact tables:
+- "df_orders": contains the messy data corresponding to customer orders. It updates daily.
+- "df_vendor_bids": contains the price quotes that each wood vendor provides for every wood type. It also updates daily.
+
+Dimension tables:
+- "df_models": contains information about each guitar model, including the name, price, and the wood types it uses.
+- "df_distributors": contains the location of each authorized seller.
 
 # Data Cleaning
 
@@ -23,7 +38,7 @@ A similar process is used to clean id_model, which should be an integer between 
 
 Messy API --> Power Query --> Star Schema --> DAX --> Dashboard
 
-The API updates daily. It is available via URL, which corresponds to a full-stack web application that I deployed using Railway. The tech stack includes Python, SQLite, Docker, FastAPI, and GitHub Actions (which runs daily jobs). This application uses the principles of “continuous development.” It is connected to a specific branch of a GitHub repo (link: https://github.com/datacookbooks/GuitarDataMessyAPI/tree/railway-revival); when I commit changes to that branch, the application automatically updates. This repo contains a Python script that generates new data every day.
+The API is a full-stack web application that I deployed using Railway. The tech stack includes Python, SQLite, Docker, FastAPI, and GitHub Actions (which runs daily jobs). This application uses the principles of “continuous development.” It is connected to a specific branch of a GitHub [repo](https://github.com/datacookbooks/GuitarDataMessyAPI/tree/railway-revival); when I commit changes to that branch, the application automatically updates. This repo contains a Python script that generates new data every day.
 
 # Screenshots
 
